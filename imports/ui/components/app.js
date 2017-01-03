@@ -1,16 +1,17 @@
 import React from 'react';
+import Navigation from '../layouts/navigation';
+import Footer from '../layouts/footer';
 
 const App = (props) => {
   return (
     <div>
-      <h1>header</h1>
+      <Navigation />
         <main>
-          {console.log(props)}
           {props.children}
         </main>
-      <h1>Footer</h1>
+      <Footer />
     </div>
   );
-};
+}
 
 export default App;
