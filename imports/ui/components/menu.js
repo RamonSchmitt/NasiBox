@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
+
+import { Dishes } from '../../api/dishes.js';
 
 import Dish from './dish';
 
-export default class Menu extends Component {
-  getDishes() {
-    return [
-      { _id: 1, text: 'Nasi Goreng'},
-      { _id: 2, text: 'Rendang'},
-      { _id: 3, text: 'Soto Ayam'},
-      { _id: 4, text: 'Pepesan'}
-    ];
-  }
+class App extends Component {
 
   renderMenu() {
-    return this.getDishes().map((dish) => (
+    return this.props.dishes.map((dish) => (
       <Dish key={dish._id} dish={dish} />
     ));
   }
@@ -28,3 +23,13 @@ export default class Menu extends Component {
     );
   }
 }
+
+App.propTypes = {
+  dishes: PropTypes.array.isRequired,
+};
+
+export default createContainer(() => {
+  return {
+    dishes: Dishes.find({}).fetch(),
+  };
+}, App);
