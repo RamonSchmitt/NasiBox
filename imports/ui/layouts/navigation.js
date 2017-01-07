@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link, browserHistory } from 'react-router';
 
 const Navigation = () => {

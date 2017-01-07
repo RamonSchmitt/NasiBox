@@ -5,7 +5,7 @@ export default class Dish extends Component {
     return (
       <div className="col-sm-6 col-md-4">
         <div className="thumbnail">
-          <img src="..." alt="..."/>
+          <img src="..." alt={this.props.dish.text}/>
           <div className="caption">
             <h3>{this.props.dish.text}</h3>
             <p>prijs</p>

@@ -1,0 +1,9 @@
+.btn-primary {
+  background-color: $color-green;
+  border-color: transparent;
+
+  &:hover {
+    background-color: darken($color-green, 10%);
+    border-color: transparent;
+  }
+}

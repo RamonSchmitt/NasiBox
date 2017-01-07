@@ -1,4 +1,11 @@
-/* CSS declarations go here */
-.navbar-default {
-  background-color: #ed1c24;
-}
+// Core variables and mixins
+@import "../imports/ui/styles/global/variables";
+
+// Components
+@import "../imports/ui/styles/components/navbar";
+@import "../imports/ui/styles/components/navbar";
+@import "../imports/ui/styles/components/thumbnail";
+
+// Elements
+@import "../imports/ui/styles/elements/typography";
+@import "../imports/ui/styles/elements/buttons";
