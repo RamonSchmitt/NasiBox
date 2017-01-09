@@ -15,7 +15,7 @@ const Navigation = () => {
         </div>
         <div className="collapse navbar-collapse" id="nasibox-navbar-collapse">
           <ul className="nav navbar-nav">
-            <li><Link to="/menu">Menu</Link></li>
+            <li><Link to="menu">Menu</Link></li>
           </ul>
         </div>
       </div>

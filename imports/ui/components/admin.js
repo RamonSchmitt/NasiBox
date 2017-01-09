@@ -31,12 +31,12 @@ class Admin extends Component {
   renderMenuList() {
     return this.props.dishes.map((dish) => (
       <li className="list-group-item" key={dish._id}>
-        <div className="input-group">
+        {/* <div className="input-group"> */}
         {dish.text}
-          <span className="input-group-btn">
+          {/* <span className="input-group-btn">
             <button className="btn btn-default" type="button" onClick={this.deleteThisDish.bind(this)}>Verwijder</button>
-          </span>
-        </div>
+          </span> */}
+        {/* </div> */}
       </li>
     ));
   }
@@ -45,16 +45,18 @@ class Admin extends Component {
     return (
       <div className="container">
         <h1>Admin</h1>
+          <form onSubmit={this.handleSubmit.bind(this)} className="input-group">
+            <input
+              className="form-control"
+              type="text"
+              ref="textInput"
+              placeholder="nieuw gerecht"
+            />
+            <span className="input-group-btn">
+              <button type="submit" className="btn btn-secondary">Submit</button>
+            </span>
+          </form>
           <ul className="list-group">
-            <li className="list-group-item">
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <input
-                  type="text"
-                  ref="textInput"
-                  placeholder="nieuw gerecht"
-                />
-              </form>
-            </li>
             {this.renderMenuList()}
           </ul>
       </div>

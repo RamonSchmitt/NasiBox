@@ -5,7 +5,13 @@ body {
 }
 
 a {
+  font-family: $font-family-title;
   color: #fff;
+}
+
+p {
+  font-family: $font-family-body;
+  color: $color-brown;
 }
 
 h1, h3 {
