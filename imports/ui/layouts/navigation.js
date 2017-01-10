@@ -11,10 +11,11 @@ const Navigation = () => {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/"><img alt="Brand" src="/nasibox_logo.png" /></Link>
+          <Link className="navbar-brand" to="/"><img alt="NasiBox" src="/nasibox_logo.svg" /></Link>
         </div>
         <div className="collapse navbar-collapse" id="nasibox-navbar-collapse">
           <ul className="nav navbar-nav">
+            <li><Link to="/">Home</Link></li>
             <li><Link to="menu">Menu</Link></li>
           </ul>
         </div>

@@ -16,13 +16,19 @@
   .navbar-nav {
     li {
       a {
-        font-size: 1.5em;
+        font-size: 1.25em;
         color: #fff;
 
-        &:hover {
+        &:hover,
+        &:focus,
+        &.active {
           color: darken(#fff, 10%);
         }
       }
     }
   }
+}
+
+.navbar-brand img {
+  height: 24px;
 }

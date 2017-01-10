@@ -8,8 +8,11 @@ import DishInfo from '../../ui/components/dish-info';
 
 export default (
   <Route path="/" component={App} >
-    <Route path="menu" component={Menu}/>
-    <Route path="info" component={DishInfo}/>
-    <Route path="admin" component={Admin}/>
+    <IndexRoute component={App} />
+
+    <Route path="menu" component={Menu} />
+    <Route path="menu/info" component={DishInfo} />
+
+    <Route path="admin" component={Admin} />
   </Route>
 );
