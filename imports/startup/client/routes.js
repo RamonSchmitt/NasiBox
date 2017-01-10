@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router';
 
 import App from '../../ui/components/app';
 import Menu from '../../ui/components/menu';
-import Admin from '../../ui/components/admin';
+import Admin from '../../ui/components/admin/admin';
 import DishInfo from '../../ui/components/dish-info';
 
 export default (

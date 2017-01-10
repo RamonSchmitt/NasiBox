@@ -2,9 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import ReactDOM from 'react-dom';
 
-import { Dishes } from '../../api/dishes.js';
+import { Dishes } from '../../../api/dishes.js';
 
-import Dish from './dish';
+import Dish from '../dish';
+import MenuListItem from './menu-list-item';
 
 class Admin extends Component {
 
@@ -23,21 +24,9 @@ class Admin extends Component {
     ReactDOM.findDOMNode(this.refs.textInput).value = '';
   }
 
-  deleteThisDish() {
-    console.log(this.props.dish._id);
-//    Dishes.remove(this.props.dish._id);
-  }
-
   renderMenuList() {
     return this.props.dishes.map((dish) => (
-      <li className="list-group-item" key={dish._id}>
-        {/* <div className="input-group"> */}
-        {dish.text}
-          {/* <span className="input-group-btn">
-            <button className="btn btn-default" type="button" onClick={this.deleteThisDish.bind(this)}>Verwijder</button>
-          </span> */}
-        {/* </div> */}
-      </li>
+        <MenuListItem key={dish._id} dish={dish} />
     ));
   }
 
@@ -53,12 +42,10 @@ class Admin extends Component {
               placeholder="nieuw gerecht"
             />
             <span className="input-group-btn">
-              <button type="submit" className="btn btn-secondary">Submit</button>
+              <button type="submit" className="btn btn-default">Voeg Toe</button>
             </span>
           </form>
-          <ul className="list-group">
-            {this.renderMenuList()}
-          </ul>
+          <span className="menu-list">{this.renderMenuList()}</span>
       </div>
     );
   }

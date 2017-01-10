@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, browserHistory } from 'react-router';
 
 const Navigation = () => {
-    return <nav className="navbar navbar-default">
+    return <nav className="navbar navbar-default navbar-fixed-top">
       <div className="container-fluid">
         <div className="navbar-header">
           <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#nasibox-navbar-collapse" aria-expanded="false">
@@ -11,7 +11,7 @@ const Navigation = () => {
             <span className="icon-bar"></span>
             <span className="icon-bar"></span>
           </button>
-          <Link className="navbar-brand" to="/">NasiBox</Link>
+          <Link className="navbar-brand" to="/"><img alt="Brand" src="/nasibox_logo.png" /></Link>
         </div>
         <div className="collapse navbar-collapse" id="nasibox-navbar-collapse">
           <ul className="nav navbar-nav">
