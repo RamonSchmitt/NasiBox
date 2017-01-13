@@ -24,3 +24,5 @@ twbs:bootstrap
 fourseven:scss
 react-meteor-data
 aldeed:simple-schema
+accounts-password
+accounts-ui

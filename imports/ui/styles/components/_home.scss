@@ -1,0 +1,32 @@
+.jumbotron {
+  background-image: url("/nasibox.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  .container {
+    position: relative;
+    min-height: 192px;
+    h1 {
+      color: #fff;
+      text-align: center;
+    }
+    .glyphicon-chevron-left {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      text-decoration: none;
+      &:hover {
+        color: $color-brand;
+      }
+    }
+    .glyphicon-chevron-right {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      text-decoration: none;
+      &:hover {
+        color: $color-brand;
+      }
+    }
+  }
+}
