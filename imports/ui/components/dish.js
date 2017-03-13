@@ -10,7 +10,7 @@ export default class Dish extends Component {
           <div className="caption">
             <h3>{this.props.dish.text}</h3>
             <p>prijs</p>
-            <p><a href="#" className="btn btn-primary" role="button">bestel</a> <Link to="menu/info" className="btn btn-default" role="button">Info</Link></p>
+            <p><Link to="#" className="btn btn-primary" role="button">bestel</Link> <Link to="menu/info" className="btn btn-default" role="button">Info</Link></p>
           </div>
         </div>
       </div>

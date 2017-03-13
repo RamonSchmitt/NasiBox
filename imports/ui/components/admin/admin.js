@@ -35,24 +35,27 @@ class Admin extends Component {
   }
 
   render() {
+    console.log(Dishes);
     return (
       <div className="container">
         <h1>Admin</h1>
           <AccountsUIWrapper />
           { this.props.currentUser ?
-            <form onSubmit={this.handleSubmit.bind(this)} className="input-group">
-              <input
-                className="form-control"
-                type="text"
-                ref="textInput"
-                placeholder="nieuw gerecht"
-              />
-              <span className="input-group-btn">
-                <button type="submit" className="btn btn-default">Voeg Toe</button>
-              </span>
-            </form> : ''
+            <div>
+              <form onSubmit={this.handleSubmit.bind(this)} className="input-group">
+                <input
+                  className="form-control"
+                  type="text"
+                  ref="textInput"
+                  placeholder="nieuw gerecht"
+                />
+                <span className="input-group-btn">
+                  <button type="submit" className="btn btn-default">Voeg Toe</button>
+                </span>
+              </form>
+              <span className="menu-list">{this.renderMenuList()}</span>
+            </div> : <div className="alert alert-warning" role="alert">Je moet inloggen om gerechten toe te voegen.</div>
           }
-          <span className="menu-list">{this.renderMenuList()}</span>
       </div>
     );
   }
