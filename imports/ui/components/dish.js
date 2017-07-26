@@ -1,23 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
-export default class Dish extends Component {
-  render() {
-    return (
-      <div className="col-sm-6 col-md-4">
-        <div className="thumbnail">
-          <img src="..." alt={this.props.dish.text}/>
-          <div className="caption">
-            <h3>{this.props.dish.text}</h3>
-            <p>prijs</p>
-            <p><Link to="#" className="btn btn-primary" role="button">bestel</Link> <Link to="menu/info" className="btn btn-default" role="button">Info</Link></p>
-          </div>
-        </div>
+const Dish = (props) => {
+  return <div className="col-sm-6 col-md-4">
+    <div className="thumbnail">
+      <img src="http://res.cloudinary.com/ramonschmitt/image/upload/v1466768718/epzbutc8zwwtdqzkxrm7.jpg" alt={props.dish.text} />
+      <div className="caption">
+        <h3>{props.dish.text}</h3>
+        <p>prijs</p>
+        <p><Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link></p>
       </div>
-    );
-  }
+    </div>
+  </div>
 }
 
-Dish.propTypes = {
-  dish: PropTypes.object.isRequired,
-};
+export default Dish;

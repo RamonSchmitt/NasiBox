@@ -1,10 +1,17 @@
 import { Mongo } from 'meteor/mongo';
 
-export const Dishes = new Mongo.Collection('dishes');
+Meteor.methods({
+  'dish.insert': function() {
+    return Dish.insert({
+      title: '',
+      price: number,
+      image: ''
+    });
+  },
 
-// dish schema
-// Title
-// Price
-// Image
-// Ingredients
-// Description
+  'dish.remove': function(dish) {
+    return Dish.remove(dish)
+  }
+});
+
+export const Dishes = new Mongo.Collection('dishes');

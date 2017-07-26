@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link } from 'react-router';
 
 const Navigation = () => {
     return <nav className="navbar navbar-default navbar-fixed-top">

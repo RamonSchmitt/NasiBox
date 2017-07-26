@@ -12,6 +12,7 @@ class App extends Component {
       return <Home />
     }
   }
+  
   render() {
     return (
       <div>

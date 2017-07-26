@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Dishes } from '../../api/dishes.js';
@@ -6,7 +6,6 @@ import { Dishes } from '../../api/dishes.js';
 import Dish from './dish';
 
 class App extends Component {
-
   renderMenu() {
     return this.props.dishes.map((dish) => (
       <Dish key={dish._id} dish={dish} />
@@ -24,11 +23,8 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  dishes: PropTypes.array.isRequired,
-};
-
 export default createContainer(() => {
+  Meteor.subscribe('dishes');
   return {
     dishes: Dishes.find({}).fetch(),
   };
