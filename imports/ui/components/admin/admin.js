@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
+import ReactRouterBootstrap, { LinkContainer } from 'react-router-bootstrap';
 import { createContainer } from 'meteor/react-meteor-data';
 
-import { Dishes } from '../../../api/dishes.js';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
 
 class Admin extends Component {
-  renderMenuList() {
-    return this.props.dishes.map((dish) => (
-      <form className="input-group" key={dish._id}>
-        <span className="form-control">{dish.text}</span>
-        <span className="input-group-btn">
-          <button className="btn btn-default" type="button">
-            <span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </button>
-        </span>
-      </form>
-    ));
+  newDish(event) {
+    event.preventDefault();
+
+    Meteor.call('dish.insert');
   }
 
   render() {
@@ -26,11 +20,16 @@ class Admin extends Component {
           { this.props.currentUser ?
             <div className="row">
               <div className="col-md-3">
-                menu
+                <div className="btn-group-vertical" role="group" aria-label="...">
+                  <LinkContainer to="/admin/new-dish">
+                    <button type="button" className="btn btn-default">Nieuw Gerecht</button>
+                  </LinkContainer>
+                  <LinkContainer to="/admin/menu-list">
+                    <button type="button" className="btn btn-default">Menu</button>
+                  </LinkContainer>
+                </div>
               </div>
-              <div className="col-md-9">
-                <span className="menu-list">{this.renderMenuList()}</span>
-              </div>
+              {this.props.children}
             </div> :
             <div className="alert alert-warning" role="alert">
               Je moet inloggen om gerechten toe te voegen.
@@ -42,9 +41,7 @@ class Admin extends Component {
 }
 
 export default createContainer(() => {
-  Meteor.subscribe('dishes');
   return {
-    dishes: Dishes.find({}).fetch(),
     currentUser: Meteor.user(),
   };
 }, Admin);

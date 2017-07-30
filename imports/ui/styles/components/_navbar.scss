@@ -32,3 +32,15 @@
 .navbar-brand img {
   height: 24px;
 }
+
+.navbar-default .navbar-toggle {
+    background-color: $color-brand;
+    border-color: #FFF;
+    &:hover {
+      background-color: lighten($color-brand, 20%);
+    }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #FFF;
+}
