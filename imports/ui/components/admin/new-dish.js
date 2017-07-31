@@ -7,14 +7,33 @@ class NewDish extends Component {
   newDish(event) {
     event.preventDefault();
 
-    Meteor.call('dish.insert');
+    Meteor.call('dish.insert', this.refs.title.value, this.refs.price.value, this.refs.image.value);
   }
 
   render() {
     return (
       <div className="col-md-9">
         <h3>Nieuw Gerecht</h3>
-        <button className="btn btn-default" type="submit" onClick={this.newDish.bind(this)}>Gerecht Toevoegen</button>
+        <form>
+          <div className="form-group">
+            <label htmlFor="title">Titel</label>
+            <input ref="title" type="text" className="form-control" placeholder="Titel" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="price">Prijs</label>
+            <input ref="price" type="number" className="form-control" placeholder="Prijs" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="image">Afbeelding</label>
+            <input ref="image" type="text" className="form-control" placeholder="Afbeelding" />
+          </div>
+          <div className="checkbox">
+            <label>
+              <input type="checkbox" />Zichtbaar
+            </label>
+          </div>
+          <button className="btn btn-default" type="submit" onClick={this.newDish.bind(this)}>Gerecht Toevoegen</button>
+        </form>
       </div>
     );
   }

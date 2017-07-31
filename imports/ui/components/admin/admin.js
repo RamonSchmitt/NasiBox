@@ -6,12 +6,6 @@ import { createContainer } from 'meteor/react-meteor-data';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
 
 class Admin extends Component {
-  newDish(event) {
-    event.preventDefault();
-
-    Meteor.call('dish.insert');
-  }
-
   render() {
     return (
       <div className="container">

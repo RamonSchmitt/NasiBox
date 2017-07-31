@@ -19,7 +19,7 @@ class MenuList extends Component {
   renderMenuList() {
     return this.props.dishes.map((dish) => (
       <form className="input-group" key={dish._id}>
-        <span className="form-control">{dish.text}</span>
+        <span className="form-control">{dish.title}</span>
         <span className="input-group-btn">
           <button className="btn btn-default" type="button" onClick={() => this.editThisDish(dish)}>
             <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -27,7 +27,7 @@ class MenuList extends Component {
           <button className="btn btn-default" type="button" onClick={() => this.hideThisDish(dish)}>
             <span className="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
           </button>
-          <button className="btn btn-default" type="button" onClick={() => this.deleteThisDish(dish)}>
+          <button className="btn btn-danger" type="button" onClick={() => this.deleteThisDish(dish)}>
             <span className="glyphicon glyphicon-remove" aria-hidden="true"></span>
           </button>
         </span>

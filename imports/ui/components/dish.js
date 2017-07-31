@@ -4,10 +4,10 @@ import { Link } from 'react-router';
 const Dish = (props) => {
   return <div className="col-sm-6 col-md-4">
     <div className="thumbnail">
-      <img src="http://res.cloudinary.com/ramonschmitt/image/upload/v1500472472/nasi_box/nb-001.jpg" alt={props.dish.text} />
+      <img src={props.dish.image} alt={props.dish.title} />
       <div className="caption">
-        <h3>{props.dish.text}</h3>
-        <p>prijs</p>
+        <h3>{props.dish.title}</h3>
+        <p>{props.dish.price}</p>
         <p><Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link></p>
       </div>
     </div>

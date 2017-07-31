@@ -24,11 +24,11 @@ Schemas.Dish = new SimpleSchema({
 // Dishes.attachSchema(Schemas.Dishes);
 
 Meteor.methods({
-  'dish.insert': function() {
+  'dish.insert': function(title, price, image) {
     return Dishes.insert({
-      title: '',
-      price: Number,
-      image: ''
+      title: title,
+      price: price,
+      image: image
     });
   },
 
