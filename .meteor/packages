@@ -22,6 +22,8 @@ twbs:bootstrap
 fourseven:scss
 react-meteor-data
 accounts-password
-accounts-ui
 practicalmeteor:mocha
 aldeed:collection2-core@2.0.0
+stylus
+ian:accounts-ui-bootstrap-3
+aldeed:simple-schema

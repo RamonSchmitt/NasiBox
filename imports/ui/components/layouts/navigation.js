@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { createContainer } from 'meteor/react-meteor-data';
+
+import AccountsUIWrapper from '../admin/AccountsUIWrapper.js';
 
 const Navigation = () => {
     return (
@@ -20,7 +23,21 @@ const Navigation = () => {
               <li><Link to="menu">Menu</Link></li>
             </ul>
             <ul className="nav navbar-nav navbar-right">
-              <li><a href="#">Box <span className="badge">4</span></a></li>
+              <li>
+                <a href="#">Box <span className="badge">4</span></a>
+              </li>
+              <li><AccountsUIWrapper /></li>
+              <li>
+                <Link to="create-account">Schrijf in</Link>
+              </li>
+              <li className="dropdown">
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meld aan<span className="caret"></span></a>
+                <div className="dropdown-menu">
+                  <input type="text" className="form-control" placeholder="Gerbruikersnaam" />
+                  <input type="text" className="form-control" placeholder="Wachtwoord" />
+                  <button type="submit" className="btn btn-primary col-xs-12 col-sm-12">Submit</button>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
@@ -28,4 +45,8 @@ const Navigation = () => {
     )
   }
 
-export default Navigation;
+  export default createContainer(() => {
+    return {
+      user: Meteor.user()
+    };
+  }, Navigation);

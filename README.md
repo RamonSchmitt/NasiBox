@@ -1,6 +1,6 @@
 # NasiBox
 
-This is an app for ordering indonesian food.
+This is an app for ordering food.
 
 I use Meteor, React, React router, Bootstrap and Sass.
 
@@ -9,10 +9,4 @@ I use Meteor, React, React router, Bootstrap and Sass.
 ```
 $ meteor npm Install
 $ meteor
-```
-
-## Tests
-
-```
-$ meteor test --driver-package practicalmeteor:mocha
 ```

@@ -1,27 +1,23 @@
 import { Mongo } from 'meteor/mongo';
-import SimpleSchema from 'simpl-schema';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-var Schemas = {};
-
-Schemas.Dish = new SimpleSchema({
+const DishSchema = new SimpleSchema({
   title: {
     type: String,
     label: "Title",
     max: 128
   },
   price: {
-    type: SimpleSchema.Integer,
+    type: Number,
     label: "Price",
     min: 0
   },
   image: {
     type: String,
-    label: "image",
+    label: "Image",
     optional: true
   }
 });
-
-// Dishes.attachSchema(Schemas.Dishes);
 
 Meteor.methods({
   'dish.insert': function(title, price, image) {
@@ -37,4 +33,8 @@ Meteor.methods({
   }
 });
 
-export const Dishes = new Mongo.Collection('dishes');
+const Dishes = new Mongo.Collection('dishes');
+
+// Dishes.attachSchema(DishSchema);
+
+export { Dishes };

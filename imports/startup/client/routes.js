@@ -5,6 +5,7 @@ import App from '../../ui/components/app';
 import Menu from '../../ui/components/menu';
 import DishInfo from '../../ui/components/dish-info';
 import OrderConfirmation from '../../ui/components/order-confirmation';
+import CreateAccount from '../../ui/components/accounts/create-account';
 
 import Admin from '../../ui/components/admin/admin';
 import MenuList from '../../ui/components/admin/menu-list';
@@ -16,6 +17,7 @@ export default (
       <Route path="menu" component={Menu} />
       <Route path="info" component={DishInfo} />
       <Route path="order" component={OrderConfirmation} />
+      <Route path="create-account" component={CreateAccount} />
 
       <Route path="admin" component={Admin}>
         <IndexRoute component={MenuList} />

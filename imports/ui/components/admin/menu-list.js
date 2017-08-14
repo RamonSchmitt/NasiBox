@@ -37,7 +37,7 @@ class MenuList extends Component {
 
   render() {
     return (
-      <div className="col-md-9">
+      <div>
         <h3>Gerechten</h3>
         <span className="menu-list">{this.renderMenuList()}</span>
       </div>
