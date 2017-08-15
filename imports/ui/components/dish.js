@@ -7,7 +7,7 @@ const Dish = (props) => {
       <img src={props.dish.image} alt={props.dish.title} />
       <div className="caption">
         <h3>{props.dish.title}</h3>
-        <p>{props.dish.price}</p>
+        <p>{props.dish.price} euro</p>
         <p><Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link></p>
       </div>
     </div>

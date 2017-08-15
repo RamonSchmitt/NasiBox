@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Navigation from '../layouts/navigation';
-import Footer from '../layouts/footer';
+import Navigation from '../components/layouts/navigation';
+import Footer from '../components/layouts/footer';
 import Home from './home';
 
 class App extends Component {
@@ -12,13 +12,12 @@ class App extends Component {
       return <Home />
     }
   }
-  
+
   render() {
     return (
       <div>
         <Navigation />
           {this.content()}
-        <Footer />
       </div>
     );
   }

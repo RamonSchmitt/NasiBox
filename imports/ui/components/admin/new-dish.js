@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Dishes } from '../../../api/dishes.js';
@@ -8,11 +9,12 @@ class NewDish extends Component {
     event.preventDefault();
 
     Meteor.call('dish.insert', this.refs.title.value, this.refs.price.value, this.refs.image.value);
+    browserHistory.push('/admin/menu-list');
   }
 
   render() {
     return (
-      <div className="col-md-9">
+      <div>
         <h3>Nieuw Gerecht</h3>
         <form>
           <div className="form-group">

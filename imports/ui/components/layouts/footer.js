@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link, browserHistory } from 'react-router';
 
 const Footer = () => {
   return (
-    <nav className="navbar navbar-default navbar-fixed-bottom">
+    <nav className="navbar navbar-default">
       <div className="container">
       </div>
     </nav>
