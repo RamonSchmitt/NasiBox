@@ -15,7 +15,7 @@ class CreateAccount extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="col-md-6 col-md-offset-3">
         <form onSubmit={this.handleSubmit.bind(this)} autoComplete="on">
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email</label>
