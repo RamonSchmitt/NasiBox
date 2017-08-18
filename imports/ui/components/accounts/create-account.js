@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class CreateAccount extends Component {
   constructor() {
-    super()
+    super();
 
     this.state = { warning: '' };
   }
@@ -12,8 +12,8 @@ class CreateAccount extends Component {
 
     const newUserData = {
       email: this.refs.email.value,
-      password: this.refs.password.value
-    }
+      password: this.refs.password.value,
+    };
 
     if (newUserData.password < 8) {
       this.setState({ warning: 'gebruik een wachtwoord met ten minste 8 tekens' });
@@ -27,7 +27,6 @@ class CreateAccount extends Component {
     return (
       <div className="col-md-6 col-md-offset-3">
         <form onSubmit={this.handleSubmit.bind(this)} autoComplete="on">
-          <div className="text-danger">{console.log("state = ", this.state.warning)}</div>
           <div className="form-group">
             <label htmlFor="exampleInputEmail1">Email</label>
             <input ref="email" type="email" className="form-control" id="exampleInputEmail1" placeholder="Email" />

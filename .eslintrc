@@ -1,28 +1,31 @@
 {
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "allowImportExportEverywhere": true
+    "env": {
+        "browser": true,
+        "es6": true,
+        "meteor": true
     },
+    "parser": "babel-eslint",
     "extends": [
       "airbnb",
       "plugin:meteor/recommended"
     ],
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
     "plugins": [
-      "meteor"
+        "import",
+        "meteor"
     ],
     "settings": {
       "import/resolver": "meteor"
     },
     "rules": {
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "react/prop-types": [2, { ignore: ['children'] }],
+      "import/extensions": ["off", "never"],
+      "import/no-extraneous-dependencies": "off",
+      "arrow-body-style": ["error", "always"],
+      "import/no-unresolved": 0,
       "no-underscore-dangle": [
         "error",
         {
@@ -31,6 +34,5 @@
           ]
         }
       ],
-      "import/no-extraneous-dependencies": 0
     }
 }

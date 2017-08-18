@@ -30,7 +30,7 @@ class NewDish extends Component {
             <input ref="image" type="text" className="form-control" placeholder="Afbeelding" />
           </div>
           <div className="checkbox">
-            <label>
+            <label htmlFor="visible">
               <input type="checkbox" />Zichtbaar
             </label>
           </div>

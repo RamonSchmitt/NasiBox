@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 const Dish = (props) => {
-  return <div className="col-sm-6 col-md-4">
-    <div className="thumbnail">
-      <img src={props.dish.image} alt={props.dish.title} />
-      <div className="caption">
-        <h3>{props.dish.title}</h3>
-        <p>{props.dish.price} euro</p>
-        <p><Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link></p>
+  const { image, title, price } = props.dish;
+
+  return (
+    <div className="col-sm-6 col-md-4">
+      <div className="thumbnail">
+        <img src={image} alt={title} />
+        <div className="caption">
+          <h3>{
+            title}</h3>
+          <p>{price} euro</p>
+          <p><Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link></p>
+        </div>
       </div>
     </div>
-  </div>
-}
+  );
+};
+
+Dish.propTypes = {
+  dish: PropTypes.shape({
+    title: String,
+    price: Number,
+    image: String,
+  }).isRequired,
+};
 
 export default Dish;

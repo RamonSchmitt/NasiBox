@@ -7,9 +7,9 @@ import Dish from './dish';
 
 class App extends Component {
   renderMenu() {
-    return this.props.dishes.map((dish) => (
-      <Dish key={dish._id} dish={dish} />
-    ));
+    return this.props.dishes.map((dish) => {
+      return <Dish key={dish._id} dish={dish} />;
+    });
   }
 
   render() {
