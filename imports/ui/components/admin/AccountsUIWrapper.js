@@ -1,6 +1,5 @@
 import { Blaze } from 'meteor/blaze';
 import { Template } from 'meteor/templating';
-import AccountsUI from 'meteor/ian:accounts-ui-bootstrap-3';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 

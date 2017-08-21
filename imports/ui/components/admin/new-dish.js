@@ -5,6 +5,11 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Dishes } from '../../../api/dishes.js';
 
 class NewDish extends Component {
+  constructor() {
+    super();
+
+    this.newDish = this.newDish.bind(this);
+  }
   newDish(event) {
     event.preventDefault();
 
@@ -34,7 +39,7 @@ class NewDish extends Component {
               <input type="checkbox" />Zichtbaar
             </label>
           </div>
-          <button className="btn btn-default" type="submit" onClick={this.newDish.bind(this)}>Gerecht Toevoegen</button>
+          <button className="btn btn-default" type="submit" onClick={this.newDish}>Gerecht Toevoegen</button>
         </form>
       </div>
     );

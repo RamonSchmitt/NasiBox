@@ -2,7 +2,7 @@
     "env": {
         "browser": true,
         "es6": true,
-        "meteor": true
+        "meteor": true,
     },
     "parser": "babel-eslint",
     "extends": [
@@ -10,7 +10,7 @@
       "plugin:meteor/recommended"
     ],
     "parserOptions": {
-      "allowImportExportEverywhere": true
+      "allowImportExportEverywhere": true,
     },
     "plugins": [
         "import",
@@ -24,8 +24,11 @@
       "react/prop-types": [2, { ignore: ['children'] }],
       "import/extensions": ["off", "never"],
       "import/no-extraneous-dependencies": "off",
-      "arrow-body-style": ["error", "always"],
+      "import/no-named-as-default": 0,
+      "import/no-named-as-default-member": 0,
       "import/no-unresolved": 0,
+      "import/no-duplicates": 0,
+      "arrow-body-style": ["error", "always"],
       "no-underscore-dangle": [
         "error",
         {

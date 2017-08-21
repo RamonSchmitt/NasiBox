@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Home = () => {
   return (
     <div className="jumbotron">
       <div className="container">
-        <a className="glyphicon glyphicon-chevron-left" aria-hidden="true" />
-        <h1>Welkom bij NasiBox</h1>
-        <a className="glyphicon glyphicon-chevron-right" aria-hidden="true" />
+        <img alt="NasiBox" src="/nasibox_logo.svg" />
+        <h1>De lekkerste indonesische gerechten thuisbezorgd</h1>
+        <Link className="btn btn-primary btn-lg" to="menu" role="button">Menu</Link>
       </div>
     </div>
   );

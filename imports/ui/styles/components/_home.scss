@@ -3,30 +3,28 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  min-height: 480px;
   .container {
     position: relative;
-    min-height: 192px;
+    text-align: center;
+
     h1 {
+      color: #fff;
+      font-size: 1.5em;
+    }
+
+    p {
       color: #fff;
       text-align: center;
     }
-    .glyphicon-chevron-left {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      text-decoration: none;
-      &:hover {
-        color: $color-brand;
-      }
+
+    img {
+      width: 25%;
+      margin: 120px 0 24px 0;
     }
-    .glyphicon-chevron-right {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      text-decoration: none;
-      &:hover {
-        color: $color-brand;
-      }
+
+    a {
+      margin-top: 32px;
     }
   }
 }

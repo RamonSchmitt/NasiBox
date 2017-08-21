@@ -1,5 +1,5 @@
 .navbar-default {
-  background-color: $color-brand;
+  background-color: $color-green;
   border-color: transparent;
   border-radius: 0;
 }
@@ -34,10 +34,10 @@
 }
 
 .navbar-default .navbar-toggle {
-    background-color: $color-brand;
+    background-color: $color-green;
     border-color: #FFF;
     &:hover {
-      background-color: lighten($color-brand, 20%);
+      background-color: lighten($color-green, 20%);
     }
 }
 
@@ -46,6 +46,6 @@
 }
 
 .badge {
-  color: $color-brand;
+  color: $color-green;
   background-color: #FFF;
 }

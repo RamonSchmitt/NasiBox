@@ -6,7 +6,12 @@ import Home from './home';
 class App extends Component {
   content() {
     if (this.props.children) {
-      return this.props.children;
+      return (
+        <div>
+          <Navigation />
+          {this.props.children}
+        </div>
+      );
     }
     return <Home />;
   }
@@ -14,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navigation />
+        {/* <Navigation /> */}
         {this.content()}
       </div>
     );
