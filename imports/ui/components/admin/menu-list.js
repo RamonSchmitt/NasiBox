@@ -1,34 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Dishes } from '../../../api/dishes.js';
 
 class MenuList extends Component {
-  deleteThisDish(dish) {
+  deleteDish(dish) {
     Meteor.call('dish.remove', dish);
   }
 
-  hideThisDish() {
-    console.log('hide');
+  toggleVisibility(dish) {
+    Meteor.call('dish.update', dish, { $set: { visible: !dish.visible } });
   }
 
-  editThisDish() {
+  editDish() {
     console.log('edit');
   }
 
   renderMenuList() {
     return this.props.dishes.map((dish) => {
+      const visibleClassName = dish.visible ? 'glyphicon glyphicon-eye-open' : 'glyphicon glyphicon-eye-close';
+
       return (
         <form className="input-group" key={dish._id}>
           <span className="form-control">{dish.title}</span>
           <span className="input-group-btn">
-            <button className="btn btn-default" type="button" onClick={() => this.editThisDish(dish)}>
+            <button className="btn btn-default" type="button" onClick={() => { this.editDish(dish); }}>
               <span className="glyphicon glyphicon-pencil" aria-hidden="true" />
             </button>
-            <button className="btn btn-default" type="button" onClick={() => this.hideThisDish(dish)}>
-              <span className="glyphicon glyphicon-eye-close" aria-hidden="true" />
+            <button className="btn btn-default" type="button" onClick={() => { this.toggleVisibility(dish); }}>
+              <span className={visibleClassName} aria-hidden="true" />
             </button>
-            <button className="btn btn-danger" type="button" onClick={() => this.deleteThisDish(dish)}>
+            <button className="btn btn-danger" type="button" onClick={() => { this.deleteDish(dish); }}>
               <span className="glyphicon glyphicon-remove" aria-hidden="true" />
             </button>
           </span>

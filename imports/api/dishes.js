@@ -17,15 +17,24 @@ const DishSchema = new SimpleSchema({
     label: 'Image',
     optional: true,
   },
+  visible: {
+    type: Boolean,
+    label: 'Visible',
+  },
 });
 
 Meteor.methods({
-  'dish.insert': function (title, price, image) {
+  'dish.insert': function (title, price, image, visible) {
     return Dishes.insert({
-      title: title,
-      price: price,
-      image: image,
+      title,
+      price,
+      image,
+      visible,
     });
+  },
+
+  'dish.update': function (dish, update) {
+    return Dishes.update(dish, update);
   },
 
   'dish.remove': function (dish) {

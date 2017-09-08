@@ -7,6 +7,7 @@ import Dish from './dish';
 
 class App extends Component {
   renderMenu() {
+    console.log(this.props.dishes);
     return this.props.dishes.map((dish) => {
       return <Dish key={dish._id} dish={dish} />;
     });
@@ -26,6 +27,6 @@ class App extends Component {
 export default createContainer(() => {
   Meteor.subscribe('dishes');
   return {
-    dishes: Dishes.find({}).fetch(),
+    dishes: Dishes.find({ visible: true }, { sort: { title: 1 } }).fetch(),
   };
 }, App);

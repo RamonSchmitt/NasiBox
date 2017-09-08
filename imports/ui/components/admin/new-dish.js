@@ -10,10 +10,11 @@ class NewDish extends Component {
 
     this.newDish = this.newDish.bind(this);
   }
+
   newDish(event) {
     event.preventDefault();
 
-    Meteor.call('dish.insert', this.refs.title.value, this.refs.price.value, this.refs.image.value);
+    Meteor.call('dish.insert', this.title.value, this.price.value, this.image.value, this.visible.checked);
     browserHistory.push('/admin/menu-list');
   }
 
@@ -24,19 +25,39 @@ class NewDish extends Component {
         <form>
           <div className="form-group">
             <label htmlFor="title">Titel</label>
-            <input ref="title" type="text" className="form-control" placeholder="Titel" />
+            <input
+              ref={(title) => { this.title = title; }}
+              type="text"
+              className="form-control"
+              placeholder="Titel"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="price">Prijs</label>
-            <input ref="price" type="number" className="form-control" placeholder="Prijs" />
+            <input
+              ref={(price) => { this.price = price; }}
+              type="number"
+              className="form-control"
+              placeholder="Prijs"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="image">Afbeelding</label>
-            <input ref="image" type="text" className="form-control" placeholder="Afbeelding" />
+            <input
+              ref={(image) => { this.image = image; }}
+              type="text"
+              className="form-control"
+              placeholder="Afbeelding"
+            />
           </div>
           <div className="checkbox">
             <label htmlFor="visible">
-              <input type="checkbox" />Zichtbaar
+              <input
+                ref={(visible) => { this.visible = visible; }}
+                type="checkbox"
+                defaultChecked
+              />
+              Zichtbaar
             </label>
           </div>
           <button className="btn btn-default" type="submit" onClick={this.newDish}>Gerecht Toevoegen</button>
@@ -49,6 +70,6 @@ class NewDish extends Component {
 export default createContainer(() => {
   Meteor.subscribe('dishes');
   return {
-    dishes: Dishes.find({}).fetch(),
+    dishes: Dishes.find({}, { sort: { title: 1 } }).fetch(),
   };
 }, NewDish);
