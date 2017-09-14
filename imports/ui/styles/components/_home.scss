@@ -1,30 +1,61 @@
-.jumbotron {
-  background-image: url("/nasibox.jpg");
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  min-height: 480px;
-  .container {
-    position: relative;
+
+  h1 {
+    color: #fff;
+    font-size: 1.5em;
     text-align: center;
-
-    h1 {
-      color: #fff;
-      font-size: 1.5em;
-    }
-
-    p {
-      color: #fff;
-      text-align: center;
-    }
-
-    img {
-      width: 25%;
-      margin: 120px 0 24px 0;
-    }
-
-    a {
-      margin-top: 32px;
-    }
+    letter-spacing: 2px;
+    font-weight: normal;
   }
+
+  p {
+    text-align: justify;
+  }
+
+  img {
+    max-width: 384px;
+    min-width: 60%;
+  }
+}
+
+.bgimg-1 {
+  background-image: url("/img_parallax.jpg");
+  min-height: 540px;
+}
+
+.bgimg-2 {
+  background-image: url("/img_parallax2.jpg");
+  min-height: 400px;
+}
+
+.bgimg-3 {
+  background-image: url("/img_parallax3.jpg");
+  min-height: 400px;
+}
+
+h2 {
+  text-align: center;
+  letter-spacing: 2px;
+  color: $color-brand;
+  font-weight: bold;
+}
+
+.home-text {
+  padding: 50px 80px;
+  text-align: justify;
+}
+
+.container.img {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: #000;
 }

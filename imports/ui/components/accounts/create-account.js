@@ -5,14 +5,16 @@ class CreateAccount extends Component {
     super();
 
     this.state = { warning: '' };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
     const newUserData = {
-      email: this.refs.email.value,
-      password: this.refs.password.value,
+      email: this.email.value,
+      password: this.password.value,
     };
 
     if (newUserData.password < 8) {
@@ -25,18 +27,20 @@ class CreateAccount extends Component {
 
   render() {
     return (
-      <div className="col-md-6 col-md-offset-3">
-        <form onSubmit={this.handleSubmit.bind(this)} autoComplete="on">
-          <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Email</label>
-            <input ref="email" type="email" className="form-control" id="exampleInputEmail1" placeholder="Email" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="exampleInputPassword1">Wachtwoord</label>
-            <input ref="password" type="password" className="form-control" id="exampleInputPassword1" placeholder="Wachtwoord" />
-          </div>
-          <button type="submit" className="btn btn-default">Schrijf in</button>
-        </form>
+      <div className="container menu">
+        <div className="col-md-6 col-md-offset-3">
+          <form onSubmit={this.handleSubmit} autoComplete="on">
+            <div className="form-group">
+              <label htmlFor="exampleInputEmail1">Email</label>
+              <input ref={(email) => { this.email = email; }} type="email" className="form-control" id="exampleInputEmail1" placeholder="Email" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="exampleInputPassword1">Wachtwoord</label>
+              <input ref={(password) => { this.password = password; }} type="password" className="form-control" id="exampleInputPassword1" placeholder="Wachtwoord" />
+            </div>
+            <button type="submit" className="btn btn-default">Schrijf in</button>
+          </form>
+        </div>
       </div>
     );
   }

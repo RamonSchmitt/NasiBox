@@ -1,34 +1,43 @@
 import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+// import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-const DishSchema = new SimpleSchema({
-  title: {
-    type: String,
-    label: 'Title',
-    max: 128,
-  },
-  price: {
-    type: Number,
-    label: 'Price',
-    min: 0,
-  },
-  image: {
-    type: String,
-    label: 'Image',
-    optional: true,
-  },
-  visible: {
-    type: Boolean,
-    label: 'Visible',
-  },
-});
+const Dishes = new Mongo.Collection('dishes');
+
+// const DishSchema = new SimpleSchema({
+//   title: {
+//     type: String,
+//     label: 'Title',
+//     max: 128,
+//   },
+//   price: {
+//     type: Number,
+//     label: 'Price',
+//     min: 0,
+//   },
+//   image: {
+//     type: String,
+//     label: 'Image',
+//     optional: true,
+//   },
+//   category: {
+//     type: String,
+//     label: 'Category',
+//   },
+//   visible: {
+//     type: Boolean,
+//     label: 'Visible',
+//   },
+// });
+
+// Dishes.attachSchema(DishSchema);
 
 Meteor.methods({
-  'dish.insert': function (title, price, image, visible) {
+  'dish.insert': function (title, price, image, category, visible) {
     return Dishes.insert({
       title,
       price,
       image,
+      category,
       visible,
     });
   },
@@ -41,9 +50,5 @@ Meteor.methods({
     return Dishes.remove(dish);
   },
 });
-
-const Dishes = new Mongo.Collection('dishes');
-
-// Dishes.attachSchema(DishSchema);
 
 export { Dishes };

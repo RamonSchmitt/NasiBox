@@ -4,5 +4,5 @@ import routes from '../imports/startup/client/routes';
 import '../imports/startup/accounts-config';
 
 Meteor.startup(() => {
-  ReactDOM.render(routes, document.getElementById('container'));
+  ReactDOM.render(routes, document.getElementById('render-target'));
 });

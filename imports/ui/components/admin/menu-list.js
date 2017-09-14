@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 
 import { Dishes } from '../../../api/dishes.js';
@@ -52,6 +52,6 @@ class MenuList extends Component {
 export default createContainer(() => {
   Meteor.subscribe('dishes');
   return {
-    dishes: Dishes.find({}).fetch(),
+    dishes: Dishes.find({}, { sort: { title: 1 } }).fetch(),
   };
 }, MenuList);

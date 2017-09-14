@@ -1,10 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import { createContainer } from 'meteor/react-meteor-data';
 
 const Admin = (props) => {
   return (
-    <div className="container">
+    <div className="container menu">
       <h1>Admin</h1>
       { props.currentUser ?
         <div className="row">
@@ -24,13 +24,6 @@ const Admin = (props) => {
       }
     </div>
   );
-};
-
-Admin.propTypes = {
-  currentUser: PropTypes.shape({
-    _id: String,
-    username: String,
-  }).isRequired,
 };
 
 export default createContainer(() => {

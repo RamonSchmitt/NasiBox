@@ -26,7 +26,7 @@ const Navigation = () => {
             <li>
               <a href="#">Box <span className="badge">4</span></a>
             </li>
-            <li><AccountsUIWrapper /></li>
+            {/* <li><AccountsUIWrapper /></li> */}
             <li>
               <Link to="create-account">Schrijf in</Link>
             </li>

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 
 const Dish = (props) => {
@@ -9,22 +9,15 @@ const Dish = (props) => {
       <div className="thumbnail">
         <img src={image} alt={title} />
         <div className="caption">
-          <h3>{
-            title}</h3>
+          <h3>{title}</h3>
           <p>{price} euro</p>
-          <p><Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link></p>
+          <p>
+            <Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link>
+          </p>
         </div>
       </div>
     </div>
   );
-};
-
-Dish.propTypes = {
-  dish: PropTypes.shape({
-    title: String,
-    price: Number,
-    image: String,
-  }).isRequired,
 };
 
 export default Dish;

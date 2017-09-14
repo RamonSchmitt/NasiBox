@@ -14,7 +14,12 @@ class NewDish extends Component {
   newDish(event) {
     event.preventDefault();
 
-    Meteor.call('dish.insert', this.title.value, this.price.value, this.image.value, this.visible.checked);
+    Meteor.call('dish.insert',
+      this.title.value,
+      this.price.value,
+      this.image.value,
+      this.category.value,
+      this.visible.checked);
     browserHistory.push('/admin/menu-list');
   }
 
@@ -50,15 +55,22 @@ class NewDish extends Component {
               placeholder="Afbeelding"
             />
           </div>
+          <div className="form-group">
+            <label htmlFor="category">Categorie</label>
+            <select className="form-control" ref={(category) => { this.category = category; }}>
+              <option>Vlees</option>
+              <option>Vis</option>
+              <option>Vegetarisch</option>
+            </select>
+          </div>
           <div className="checkbox">
-            <label htmlFor="visible">
-              <input
-                ref={(visible) => { this.visible = visible; }}
-                type="checkbox"
-                defaultChecked
-              />
-              Zichtbaar
-            </label>
+            <label htmlFor="visible" />
+            <input
+              ref={(visible) => { this.visible = visible; }}
+              type="checkbox"
+              defaultChecked
+            />
+            Zichtbaar
           </div>
           <button className="btn btn-default" type="submit" onClick={this.newDish}>Gerecht Toevoegen</button>
         </form>
