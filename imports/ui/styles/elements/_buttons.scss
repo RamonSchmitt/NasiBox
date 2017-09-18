@@ -6,4 +6,13 @@
     background-color: darken($color-green, 10%);
     border-color: transparent;
   }
+  &:active {
+    background-color: darken($color-green, 10%);
+    border-color: transparent;
+  }
+  &:focus {
+    background-color: darken($color-green, 10%);
+    border-color: transparent;
+    outline-color: lighten($color-green, 10%);
+  }
 }

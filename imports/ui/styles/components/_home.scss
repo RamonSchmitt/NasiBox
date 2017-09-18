@@ -12,6 +12,7 @@
     text-align: center;
     letter-spacing: 2px;
     font-weight: normal;
+    margin-bottom: 48px;
   }
 
   p {
@@ -19,8 +20,7 @@
   }
 
   img {
-    max-width: 384px;
-    min-width: 60%;
+    width: 30%;
   }
 }
 
@@ -42,7 +42,7 @@
 h2 {
   text-align: center;
   letter-spacing: 2px;
-  color: $color-brand;
+  color: $color-green;
   font-weight: bold;
 }
 

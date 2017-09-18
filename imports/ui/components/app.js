@@ -19,7 +19,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <Navigation /> */}
         {this.content()}
       </div>
     );

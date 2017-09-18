@@ -9,13 +9,6 @@ class App extends Component {
   renderMenu() {
     let filteredMenu = this.props.dishes;
     console.log(filteredMenu);
-    // switch (filteredMenu.category) {
-    //   case Vis:
-    //     console.log("vis");
-    //     break;
-    //   default:
-    //     console.log("alles");
-    // }
 
     return filteredMenu.map((dish) => {
       return (
