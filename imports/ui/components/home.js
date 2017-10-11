@@ -13,31 +13,23 @@ const Home = () => {
       </div>
 
       <div className="home-text">
-        <div className="container">
-          <h2>Welkom bij Nasibox</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales justo et mauris molestie viverra. Aliquam tempus ex at feugiat mattis. Nullam dapibus faucibus tortor, eu interdum orci tincidunt sit amet. Phasellus eu placerat orci. Proin egestas enim ut felis scelerisque accumsan. Donec placerat ipsum ut purus mattis posuere. Nam.
-          </p>
-        </div>
+        <h2>Welkom bij Nasibox</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales justo et mauris molestie viverra. Aliquam tempus ex at feugiat mattis. Nullam dapibus faucibus tortor, eu interdum orci tincidunt sit amet. Phasellus eu placerat orci. Proin egestas enim ut felis scelerisque accumsan. Donec placerat ipsum ut purus mattis posuere. Nam.
+        </p>
       </div>
 
-      <div className="bgimg-2">
-      </div>
+      <div className="bgimg-2" />
 
       <div className="home-text">
-        <div className="container">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales justo et mauris molestie viverra. Aliquam tempus ex at feugiat mattis. Nullam dapibus faucibus tortor, eu interdum orci tincidunt sit amet. Phasellus eu placerat orci. Proin egestas enim ut felis scelerisque accumsan. Donec placerat ipsum ut purus mattis posuere. Nam.</p>
-        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales justo et mauris molestie viverra. Aliquam tempus ex at feugiat mattis. Nullam dapibus faucibus tortor, eu interdum orci tincidunt sit amet. Phasellus eu placerat orci. Proin egestas enim ut felis scelerisque accumsan. Donec placerat ipsum ut purus mattis posuere. Nam.</p>
       </div>
 
-      <div className="bgimg-3">
-      </div>
+      <div className="bgimg-3" />
 
       <div className="home-text">
-        <div className="container">
-          <h2>Verse ingredienten</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales justo et mauris molestie viverra. Aliquam tempus ex at feugiat mattis. Nullam dapibus faucibus tortor, eu interdum orci tincidunt sit amet. Phasellus eu placerat orci. Proin egestas enim ut felis scelerisque accumsan. Donec placerat ipsum ut purus mattis posuere. Nam.</p>
-        </div>
+        <h2>Verse ingredienten</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales justo et mauris molestie viverra. Aliquam tempus ex at feugiat mattis. Nullam dapibus faucibus tortor, eu interdum orci tincidunt sit amet. Phasellus eu placerat orci. Proin egestas enim ut felis scelerisque accumsan. Donec placerat ipsum ut purus mattis posuere. Nam.</p>
       </div>
 
       <div className="bgimg-1">

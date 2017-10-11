@@ -22,10 +22,10 @@ class App extends Component {
       <div className="container menu">
         <div className="text-center category">
           <div className="btn-group" role="group">
-            <button type="button" className="btn btn-default active">Alle gerechten</button>
-            <button type="button" className="btn btn-default">Vlees gerechten</button>
-            <button type="button" className="btn btn-default">Vis gerechten</button>
-            <button type="button" className="btn btn-default">Vegetarische gerechten</button>
+            <button type="button" className="btn btn-primary active">Alle gerechten</button>
+            <button type="button" className="btn btn-primary">Vlees gerechten</button>
+            <button type="button" className="btn btn-primary">Vis gerechten</button>
+            <button type="button" className="btn btn-primary">Vegetarische gerechten</button>
           </div>
         </div>
         <div>

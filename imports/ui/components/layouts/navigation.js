@@ -24,7 +24,7 @@ const Navigation = () => {
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="#">Box <span className="badge">4</span></a>
+              <Link to="order" >Box <span className="badge">4</span></Link>
             </li>
             {/* <li><AccountsUIWrapper /></li> */}
             <li>

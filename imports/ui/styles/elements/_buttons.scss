@@ -6,9 +6,24 @@
     background-color: darken($color-green, 10%);
     border-color: transparent;
   }
-  &:active {
+  &.active {
     background-color: darken($color-green, 10%);
     border-color: transparent;
+
+    &:hover {
+      background-color: darken($color-green, 10%);
+      border-color: transparent;
+    }
+    &:focus {
+      background-color: darken($color-green, 10%);
+      border-color: transparent;
+      outline-color: lighten($color-green, 10%);
+    }
+  }
+  &:active:focus {
+    background-color: darken($color-green, 10%);
+    border-color: transparent;
+    outline-color: lighten($color-green, 10%);
   }
   &:focus {
     background-color: darken($color-green, 10%);
