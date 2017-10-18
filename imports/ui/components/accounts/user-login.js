@@ -1,32 +1,30 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 
-class CreateAccount extends Component {
+class Login extends Component {
   state = {
-    warning: '',
-  }
+    error: '',
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const newUserData = {
-      email: this.email.value,
-      password: this.password.value,
-    };
+    const email = this.email.value;
+    const password = this.password.value;
 
-    if (newUserData.password < 8) {
-      this.setState({ warning: 'gebruik een wachtwoord met ten minste 8 tekens' });
-    } else {
-      Meteor.call('createUserAccount', newUserData);
-    }
-    Meteor.loginWithPassword(newUserData.email, newUserData.password);
-    browserHistory.push('/menu');
+    Meteor.loginWithPassword(email, password, (error) => {
+      if (error) {
+        this.setState({ error: error.reason });
+      } else {
+        this.setState({ error: '' });
+      }
+    });
   }
 
   render() {
     return (
-      <div className="container menu">
-        <div className="col-md-6 col-md-offset-3">
+      <li className="dropdown">
+        <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meld aan<span className="caret" /></a>
+        <div className="dropdown-menu">
           <form onSubmit={this.handleSubmit} autoComplete="on">
             <div className="form-group">
               <label htmlFor="Input Email">Email</label>
@@ -36,12 +34,13 @@ class CreateAccount extends Component {
               <label htmlFor="Input Password">Wachtwoord</label>
               <input ref={(password) => { this.password = password; }} type="password" className="form-control" placeholder="Wachtwoord" />
             </div>
-            <button type="submit" className="btn btn-default">Schrijf in</button>
+            <div className="text-danger">{this.state.error}</div>
+            <button type="submit" className="btn btn-primary">Meld aan</button>
           </form>
         </div>
-      </div>
+      </li>
     );
   }
 }
 
-export default CreateAccount;
+export default Login;

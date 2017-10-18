@@ -11,9 +11,7 @@ const Dish = (props) => {
         <div className="caption">
           <h3>{title}</h3>
           <p>{price} euro</p>
-          <p>
-            <Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link>
-          </p>
+          <Link to="order" className="btn btn-primary" role="button">bestel</Link> <Link to="info" className="btn btn-default" role="button">Info</Link>
         </div>
       </div>
     </div>
